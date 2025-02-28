@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<style>
+input[type=text], select {
+  width:100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width:100%;
+  background-color: #0275d8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+}
+form{
+  text-align: center;
+}
+.warning p {
+  font-color:red;
+}
+</style>
+</head>
+
+<body>
+
+  <center>
+  <img src="{% static 'mainapp/Katsea.jpg' %}" class="text-center" width="200px" height="200px" />
+  <h2>KATSEA Elections 2023</h2>
+  </center>
+
+
+<div class="row justify-content-center">
+
+  <form action="" method="post" class="col-xs-12 col-sm-12 col-md-6" >
+    {% csrf_token %}
+    {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+  <div class="form-group">
+    <label for="code">Enter Voting Code</label>
+    <input type="text" name="code" id="code" class="form-control" autocomplete="off"  aria-describedby="emailHelp" placeholder="Enter Voting code">
+    <small id="codeHelp" class="form-text text-muted">Check Your email for voting code</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Enter</button>
+</form>
+</div>
+
+</body>
+</html>

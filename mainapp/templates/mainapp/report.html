@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Report</title>
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+	<link href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css" type="text/css" rel="stylesheet" />
+
+	<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.data {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.data td, .data th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.data tr:hover {background-color: #ddd;}
+
+.data th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #808080;
+  color: white;
+}
+</style>
+
+</head>
+<body>
+
+		<center>
+	<img src="{% static 'mainapp/Katsea.jpg' %}" class="text-center" width="200px" height="200px" />
+	<h2>Live Results</h2>
+</center>
+
+
+
+
+<div>
+	<table id="report" class="display cell-border" style="width:100%;text-align: center;">
+		<thead>
+            <tr>
+            	<th>No.</th>
+                <th>Voting Code</th>
+                <th>President</th>
+                <th>Vice President</th>
+                <th>Secretary general</th>
+                <th>Vice Secretary general</th>
+                <th>Treasurer</th>
+                <th>Deputy Treasurer</th>
+                <th>Organizing secretary</th>
+                <th>External Relations Secretary</th>
+                <th>Education and Research Secretary</th>
+                <th>Auditor</th>
+                <th>Trustees</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        	{% for b in ballots %}
+        		<tr>
+        			<td>{{forloop.counter}}</td>
+        			<td>{{b.voter.code}}</td>
+        			<td>{{b.pr}}</td>
+        			<td>{{b.vp}}</td>
+        			<td>{{b.sg}}</td>
+        			<td>{{b.vs}}</td>
+        			<td>{{b.tr}}</td>
+        			<td>{{b.dt}}</td>
+        			<td>{{b.os}}</td>
+        			<td>{{b.eas}}</td>
+        			<td>{{b.ers}}</td>
+        			<td>{{b.ad}}</td>
+        			<td>{{b.tru1}}, {{b.tru2}}, {{b.tru3}}</td>
+        		</tr>
+        		
+        	{% endfor %}   	
+        </tbody>
+	</table>
+
+	</div>
+
+</body>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        
+<script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#report').DataTable({
+    	"dom": 'Bfrtip',
+        "buttons": [
+            'excel', 'csv',{
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'LEGAL'
+            }
+        ],
+    	"pageLength": 100,
+    	"bPaginate": false,
+    });
+} );
+</script>
+</html>

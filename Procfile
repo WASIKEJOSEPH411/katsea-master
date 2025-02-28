@@ -1,0 +1,1 @@
+web: gunicorn katsea.wsgi --log-file -

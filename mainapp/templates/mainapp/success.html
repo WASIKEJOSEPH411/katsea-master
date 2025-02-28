@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Thanks for voting</title>
+</head>
+<body>
+<center>
+	<img src="{% static 'mainapp/Katsea.jpg' %}" class="text-center" width="200px" height="200px" />
+	<h2>{{msg}}</h2>
+	<a href="{% url 'vote-count' %}">Click Here To See Vote count</a> <br>
+	<!-- <a href="{% url 'report' %}">Report</a> -->
+</center>
+</body>
+</html>

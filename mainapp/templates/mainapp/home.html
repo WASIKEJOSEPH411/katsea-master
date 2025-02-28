@@ -1,0 +1,521 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://dankakai.wufoo.com/forms/m16atmoc0njjufc/ -->
+<html class="safari" id="" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>
+		KATSEA Elections
+	</title>
+
+	<!-- Meta Tags -->
+	<meta name="generator" content="Wufoo">
+	<meta name="robots" content="index">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+	<link href="{% static 'mainapp/index.0625.css' %}" rel="stylesheet">
+			<link href="{% static 'mainapp/theme.css' %}" rel="stylesheet">
+				<link href="{% static 'mainapp/Aubergine.css' %}" rel="stylesheet">
+	
+	
+	<!--[if lt IE 10]>
+	<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	
+  
+  <style>
+    @-webkit-keyframes rotate {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); } }
+
+    @keyframes rotate {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg); } }
+
+    @-webkit-keyframes loop {
+      0% {
+        stroke-dasharray: 20, 100;
+        stroke-dashoffset: 30;
+        -webkit-animation-timing-function: cubic-bezier(0.3, 0, 1, 1);
+        animation-timing-function: cubic-bezier(0.3, 0, 1, 1); }
+      40% {
+        stroke-dasharray: 60, 70;
+        stroke-dashoffset: -10;
+        -webkit-animation-timing-function: cubic-bezier(0, 0, 0.9, 1);
+        animation-timing-function: cubic-bezier(0, 0, 0.9, 1); }
+      85% {
+        stroke-dasharray: 20, 100; }
+      100% {
+        stroke-dashoffset: -90; } }
+
+    @keyframes loop {
+      0% {
+        stroke-dasharray: 20, 100;
+        stroke-dashoffset: 30;
+        -webkit-animation-timing-function: cubic-bezier(0.3, 0, 1, 1);
+        animation-timing-function: cubic-bezier(0.3, 0, 1, 1); }
+      40% {
+        stroke-dasharray: 60, 70;
+        stroke-dashoffset: -10;
+        -webkit-animation-timing-function: cubic-bezier(0, 0, 0.9, 1);
+        animation-timing-function: cubic-bezier(0, 0, 0.9, 1); }
+      85% {
+        stroke-dasharray: 20, 100; }
+      100% {
+        stroke-dashoffset: -90; } }
+  </style>
+</head>
+
+<body id="public" class="noI" onorientationchange="window.scrollTo(0, 1)">
+
+
+
+
+
+<div id="container" class="ltr ">
+	
+
+	  
+<form id="form2" name="form2" class="wufoo topLabel page1" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post"  action="">
+	{% csrf_token %}
+
+<header id="header" class="info">
+	<center>
+	<div class="0"></div>
+	<img src="{% static 'mainapp/Katsea.jpg' %}" class="text-center" width="200px" height="200px" />
+	<h2>KATSEA Elections 2023</h2>
+	</center>
+</header>
+
+	
+<ul>
+
+    <li id="fo2li2" class="     ">
+        Name: {{voter.name}}<br>
+        Code: {{voter.code}}
+    </li>
+		
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title2" class="desc notranslate">
+		President
+				<span id="req_2" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title2" class="desc">
+		President
+				<span id="req_2" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+
+  <input id="radioDefault_2" name="pr" type="hidden" value="">
+   {% for candidate in candidates %}
+      {% if candidate.title == 'pr' %}
+    <span>
+  <input id="Field2_{{forloop.counter}}" name="pr" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field2_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+      {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title3" class="desc notranslate">
+		Vice President
+				<span id="req_3" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title3" class="desc">
+		Vice President
+				<span id="req_3" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_3" name="vp" type="hidden" value="">
+      {% for candidate in candidates %}
+      {% if candidate.title == 'vp' %}
+    <span>
+  <input id="Field3_{{forloop.counter}}" name="vp" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field3_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+    {% endif %}
+    {% endfor %}
+
+		</div>
+	</fieldset>
+	</li>
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title4" class="desc notranslate">
+		Secretary General
+				<span id="req_4" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title4" class="desc">
+		Secretary general
+				<span id="req_4" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_4" name="sg" type="hidden" value="">
+ {% for candidate in candidates %}
+      {% if candidate.title == 'sg' %}
+    <span>
+  <input id="Field4_{{forloop.counter}}" name="sg" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field4_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title5" class="desc notranslate">
+		Vice Secretary General
+				<span id="req_5" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title5" class="desc">
+		Vice Secretary General
+				<span id="req_5" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_5" name="vs" type="hidden" value="">
+   {% for candidate in candidates %}
+      {% if candidate.title == 'vs' %}
+    <span>
+  <input id="Field5_{{forloop.counter}}" name="vs" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field5_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+       {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+<li id="fo2li6" class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title6" class="desc notranslate">
+		Treasurer
+				<span id="req_6" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title6" class="desc">
+		Treasurer
+				<span id="req_6" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_6" name="tr" type="hidden" value="">
+    {% for candidate in candidates %}
+      {% if candidate.title == 'tr' %}
+    <span>
+  <input id="Field6_{{forloop.counter}}" name="tr" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field6_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+       {% endif %}
+    {% endfor %} 
+		</div>
+	</fieldset>
+	</li>
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title8" class="desc notranslate">
+		Deputy Treasurer
+				<span id="req_8" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title8" class="desc">
+		Deputy Treasurer
+				<span id="req_8" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_8" name="dt" type="hidden" value="">
+  {% for candidate in candidates %}
+      {% if candidate.title == 'dt' %}
+    <span>
+  <input id="Field8_{{forloop.counter}}" name="dt" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field8_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %}	 
+		</div>
+	</fieldset>
+	</li>
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title9" class="desc notranslate">
+		Organizing Secretary
+				<span id="req_9" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title9" class="desc">
+		Organizing Secretary
+				<span id="req_9" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_9" name="os" type="hidden" value="">
+   {% for candidate in candidates %}
+      {% if candidate.title == 'os' %}
+    <span>
+  <input id="Field9_{{forloop.counter}}" name="os" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field9_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title9" class="desc notranslate">
+		External Relations Secretary
+				<span id="req_9" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title9" class="desc">
+		Organizing Secretary
+				<span id="req_9" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_9" name="eas" type="hidden" value="">
+  {% for candidate in candidates %}
+      {% if candidate.title == 'eas' %}
+    <span>
+  <input id="Field10_{{forloop.counter}}" name="eas" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field10_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title9" class="desc notranslate">
+		Education and Research Secretary
+				<span id="req_9" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title9" class="desc">
+		Organizing Secretary
+				<span id="req_9" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_9" name="ers" type="hidden" value="">
+   {% for candidate in candidates %}
+      {% if candidate.title == 'ers' %}
+    <span>
+  <input id="Field11_{{forloop.counter}}" name="ers" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field11_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title9" class="desc notranslate">
+		Auditor
+				<span id="req_9" class="req">*</span>
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title9" class="desc">
+		Organizing Secretary
+				<span id="req_9" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+  <input id="radioDefault_9" name="ad" type="hidden" value="">
+   {% for candidate in candidates %}
+      {% if candidate.title == 'ad' %}
+    <span>
+  <input id="Field13_{{forloop.counter}}" name="ad" type="radio" class="field radio" value="{{candidate.name}}" tabindex="0"   required="">
+  <label class="choice" for="Field13_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %} 
+		</div>
+	</fieldset>
+	</li>
+
+
+<li  class="     ">
+	<fieldset>
+	<!--[if !IE | (gte IE 8)]-->
+	<legend id="title112" class="desc notranslate">
+		Trustees
+				<span id="req_112" class="req">*</span> ( Choose  3)
+			</legend>
+	<!--[endif]-->
+	<!--[if lt IE 8]>
+	<label id="title112" class="desc">
+		Trustees
+				<span id="req_112" class="req">*</span>
+			</label>
+	<![endif]-->
+	<div>
+     {% for candidate in candidates %}
+      {% if candidate.title == 'tru' %}
+    <span>
+  <input id="Field112_{{forloop.counter}}" name="tru" type="checkbox" class="field checkbox" value="{{candidate.name}}" tabindex="0"    >
+  <label class="choice" for="Field112_{{forloop.counter}}">
+    <span class="choice__text notranslate">{{candidate.name}}</span>
+          <span class="choice__qty">
+              </span>
+  </label>
+    </span>
+     {% endif %}
+    {% endfor %}
+		</div>
+	</fieldset>
+	</li>
+
+
+ 
+
+	
+	<li class="buttons ">
+		<div>
+								 
+    		<input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" >	
+    
+				</div>
+	</li>
+
+		
+	</ul>
+</form>
+ 
+
+</div><!--container-->
+
+      <style type="text/css">
+@import url(https://static.wufoo.com/stylesheets/ads/css/power.0625.css);
+</style>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  $(document).ready(function() {
+            
+    var limit = 4;
+    $('input.checkbox').on('change', function(evt) {
+       if($("input[type='checkbox']:checked").length >= limit) {
+           this.checked = false;
+       }
+    });
+
+    $("#form2").submit(function(e){
+        if($("input[type='checkbox']:checked").length < 3) {
+           e.preventDefault();
+           alert("Choose 3 Trustees ");
+       }
+
+    });
+
+});
+	
+	
+</script>
+
+
+ 
+
+
+</body></html>
